@@ -1,6 +1,6 @@
 * {
-    margin: 0%;
-    padding: 0%;
+    margin: 0;
+    padding: 0;
 }
 
 html,
@@ -8,35 +8,42 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
+    background-color: rgb(35, 50, 50);   /*background colour*/
+    color: lightgray;      /* body text*/
 }
 
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
 }
 
 main {
+    display: flex;
     flex: 1;
 }
 
-header {
-    /* border: 3px dotted red; */
+main h2 {
+    font-size: 18pt;
+    color: lightgray;     /*body text*/
+    font-weight: normal;
+    line-height: 1.5;
+}
 
+header {
+    background-color: rgb(6, 66, 25);            /*header colour*/
+    border-bottom: 3px solid rgb(5, 150, 15);    /*border colour*/
     text-align: center;
     padding: 2%;
+    margin-bottom: 2%;
+    color: lightgreen;       /*title colour*/
 }
 
 header h1 {
-    /* border: 3px dotted red; */
-
     font-size: 36pt;
     margin: 1%;
 }
 
 nav.nav {
-    /* border: 3px dotted red; */
-
     display: flex;
     justify-content: center;
     gap: 40px;
@@ -44,75 +51,81 @@ nav.nav {
 }
 
 nav.nav a {
-    /* border: 3px dotted red; */
-
     text-decoration: none;
-    color: darkgreen;
+    color: rgb(50, 250, 50);          /*link colour*/
     font-weight: 600;
     padding: 5px 10px;
 }
 
+nav.nav a:hover,
+nav.nav a:focus {
+    color: lightgreen;          /*link hover vcolour*/
+}
 
+
+footer {
+    background-color: rgb(6, 66, 25);            /*footer colour*/
+    border-top: 3px solid rgb(5, 150, 15);    /*border colour*/
+    text-align: center;
+    font-size: 1.3rem;
+    padding: 2% 0;
+    margin-top: 40px;
+}
+
+footer a {
+    text-decoration: none;
+    color: rgb(50, 250, 50);          /*link colour*/
+    font-size: 18pt;
+    font-weight: bold;
+}
+
+footer a:hover,
+footer a:focus {
+    color: lightgreen;          /*link hover vcolour*/
+}
+
+
+
+
+
+/* index html css stuff start*/
 section {
-    /* border: 3px dotted red; */
-
     display: flex;
     align-items: flex-start;
     gap: 20px;
     max-width: 60%;
     margin: 0 auto;
     padding: 20px;
+    background-color: rgb(50,50, 50);                  /*inner box colour*/
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 130, 0, 0.5);          /*box shadow coloru*/
 }
 
 section article:first-child {
-    /* border: 3px dotted red; */
-
     flex: 1;
     padding-right: 10px;
 }
 
 section article:last-child {
-    /* border: 3px dotted red; */
-
-    flex: .75;
+    flex: 1;
 }
 
 .articleImg {
-    /* border: 3px dotted red; */
-
     width: 100%;
     height: auto;
     display: block;
     border-radius: 10px;
     object-fit: cover;
+    box-shadow: 0 0 10px rgba(0, 130, 0, 0.5);          /*box shadow coloru*/
 }
-
-footer {
-    /* border: 3px dotted red; */
-
-    text-align: center;
-    font-size: 1.3rem;
-    padding: 20px 0;
-    border-top: 3px solid darkgreen;
-    margin-top: 40px;
-    background-color: #f9f9f9;
-}
-
-footer a {
-    /* border: 3px dotted red; */
-
-    text-decoration: none;
-    color: darkgreen;
-    font-size: 18pt;
-    font-weight: bold;
-}
+/* index html css stuff end */
 
 
 
 
-/* inspiration page css */
-
+/* Inspiration html css stuff start*/
 .creator-section {
+    background-color: rgb(50,50, 50);                  /*inner box colour*/
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -120,11 +133,8 @@ footer a {
     max-width: 60%;
     margin: 40px auto;
     padding: 20px;
-}
-
-
-.creator-text {
-    flex: 1;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 130, 0, 0.5);          /*box shadow coloru*/
 }
 
 .creator-text {
@@ -135,12 +145,22 @@ footer a {
     height: 100%;
 }
 
-.creator-text h3 {
-    font-size: 14pt;
-    font-weight: normal;
-    color: #2E2E2E;
+.creator-text h2 a {
+    color: rgb(50, 250, 50);          /*link colour*/
+    text-decoration: none;
+    font-size: 25pt;
 }
 
+.creator-text h2 a:hover,
+.creator-text h2 a:focus {
+    color: lightgreen;          /*link hover vcolour*/
+}
+
+.creator-text h3 {
+    font-size: 18pt;
+    font-weight: normal;
+    color: lightgray;     /*body text*/
+}
 
 .creator-images {
     position: relative;
@@ -148,45 +168,39 @@ footer a {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
-    transition-duration: 3s;
+    box-shadow: 0 0 10px rgba(0, 130, 0, 0.5);          /*box shadow coloru*/
 }
 
 .creator-images img {
     width: 100%;
     height: auto;
-    border-radius: 8px;
+    border-radius: 10px;
     object-fit: cover;
     aspect-ratio: 1 / 1;
-    transition: transform 3s ease;
-    z-index: 1;
+    transition: transform 3s ease-in-out;
     position: relative;
+    
 }
 
 .creator-images img:hover {
     position: absolute;
     top: 0;
     left: 0;
-    width: calc(100% + 10px);
-    height: calc(100% + 10px);
+    width: calc(100% );
+    height: calc(100%);
     transform: scale(1);
     z-index: 10;
     transform-origin: center;
     grid-column: span 2;
     grid-row: span 2;
-    transition-duration: 3s;
 }
+/* Inspiration html css stuff end*/
 
 
 
 
-
-
-
-
-/* top five css stuff */
-
+/*top 5 html and css stuff star*/
 .top-fives-container {
-    /* background-color: blue; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -199,7 +213,6 @@ footer a {
 }
 
 .list-wrapper {
-    /* background-color: red; */
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -207,16 +220,15 @@ footer a {
 }
 
 .list-wrapper h2 {
-    font-size: 1.5rem;
+    font-size: 25pt;
     margin-bottom: 20px;
     text-align: center;
+    color: lightgreen;       /*title colour*/
 }
-
 
 .list-column {
     width: 100%;
-    list-style-position: inside;
-}
+} 
 
 .list-item {
     margin-bottom: 30px;
@@ -231,18 +243,17 @@ footer a {
 
 .item-content p {
     flex: 1;
-    font-size: 1.1rem;
+    font-size: 18pt;
     text-align: left;
     margin: 0;
+    color: lightgray;      /* body text*/
 }
 
 .item-content img {
     width: 300px;
     height: auto;
-    border-radius: 8px;
+    border-radius: 10px;
     object-fit: cover;
     align-self: flex-start;
+    box-shadow: 0 0 10px rgba(0, 130, 0, 0.5);          /*box shadow coloru*/
 }
-
-
-/* contact page css stuff */
