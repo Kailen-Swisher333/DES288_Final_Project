@@ -1,3 +1,10 @@
+
+/*
+all of the html was pretty easy as it was mostly just classes and divs and orginzation
+but the css is a mix of stack overflow,youtube, w3 school, and frantic googling and guesswork 
+but it works
+*/
+
 * {
     margin: 0;
     padding: 0;
@@ -10,6 +17,11 @@ body {
     padding: 0;
     background-color: rgb(35, 50, 50);   /*background colour*/
     color: lightgray;      /* body text*/
+
+    background-image: url(/imgs/background.png);
+    background-repeat: repeat;
+    background-size: auto;
+    animation: scrollBackground 20s linear infinite;
 }
 
 body {
@@ -29,9 +41,27 @@ main h2 {
     line-height: 1.5;
 }
 
+.spinning-axe {
+    position: absolute;
+    top: 10px;   
+    left: 10px; 
+    width: 9%;       
+    height: auto;
+    transform: scalex(-1);
+}
+
+.spinning-axe2 {
+    position: absolute;
+    top: 10px;   
+    right: 10px; 
+    width: 9%;       
+    height: auto;
+}
+
 header {
     background-color: rgb(6, 66, 25);            /*header colour*/
     border-bottom: 3px solid rgb(5, 150, 15);    /*border colour*/
+    position: relative;
     text-align: center;
     padding: 2%;
     margin-bottom: 2%;
@@ -256,4 +286,18 @@ section article:last-child {
     object-fit: cover;
     align-self: flex-start;
     box-shadow: 0 0 10px rgba(0, 130, 0, 0.5);          /*box shadow coloru*/
+    transition-duration: 3s;
+}
+
+.item-content img:hover{
+        transform: scale(1.5);
+}
+
+@keyframes scrollBackground {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 -100%;
+  }
 }
